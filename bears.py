@@ -34,9 +34,7 @@ def bears(n):
                 return True
     if n % 5 == 0:
         new_n = n - 42
-        if new_n == 42:
-            return True
-        elif new_n > 42:
+        if new_n > 42:
             base5 = bears(new_n)
             if base5 == True:
                 return True
