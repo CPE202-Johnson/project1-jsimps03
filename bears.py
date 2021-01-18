@@ -10,32 +10,29 @@ def bears(n):
     # base5 is a boolean value resulting from the recursive result after meeting the third criteria
     # new_n is the new value of n after its been reduced
     # ones and tens are the int values of the last and second to last digits of n
-    if n == 42:
+    # First two conditional statements check for base case:
+    if n == 42:                     
         return True
     elif n < 42:
         return False
+    # Next three conditional statements reduce problem by the three rules
     if n % 2 == 0:
         new_n = n/2
-        if new_n == 42:
+        base2 = bears(new_n)
+        if base2 == True:
             return True
-        elif new_n > 42:
-            base2 = bears(new_n)
-            if base2 == True:
-                return True
     if (n % 3 == 0) or (n % 4 == 0):
         ones = n % 10
         tens = n // 10
         new_n = n - (ones * tens)
-        if new_n == 42:
-            return True
-        elif new_n > 42:
+        # Check if either ones or tens place was 0
+        if new_n != n:              
             base34 = bears(new_n)
             if base34 == True:
                 return True
     if n % 5 == 0:
         new_n = n - 42
-        if new_n > 42:
-            base5 = bears(new_n)
-            if base5 == True:
-                return True
+        base5 = bears(new_n)
+        if base5 == True:
+            return True
     return False
