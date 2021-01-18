@@ -14,10 +14,10 @@ def bears(n):
         return True
     elif n < 42:
         return False
-    if n % 2 == 0:
-        new_n = n/2
-        base2 = bears(new_n)
-        if base2 == True:
+    if n % 5 == 0:
+        new_n = n - 42
+        base5 = bears(new_n)
+        if base5 == True:
             return True
     if (n % 3 == 0) or (n % 4 == 0):
         ones = n % 10
@@ -26,9 +26,9 @@ def bears(n):
         base34 = bears(new_n)
         if base34 == True:
             return True
-    if n % 5 == 0:
-        new_n = n - 42
-        base5 = bears(new_n)
-        if base5 == True:
+    if n % 2 == 0:
+        new_n = n/2
+        base2 = bears(new_n)
+        if base2 == True:
             return True
     return False
