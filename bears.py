@@ -16,11 +16,12 @@ def bears(n):
     elif n < 42:
         return False
     # Next three conditional statements reduce problem by the three rules
+    base2 = False
+    base34 = False
+    base5 = False
     if n % 2 == 0:
         new_n = n/2
         base2 = bears(new_n)
-        if base2 == True:
-            return True
     if (n % 3 == 0) or (n % 4 == 0):
         ones = n % 10
         tens = n // 10
@@ -28,11 +29,33 @@ def bears(n):
         # Check if either ones or tens place was 0
         if new_n != n:              
             base34 = bears(new_n)
-            if base34 == True:
-                return True
     if n % 5 == 0:
         new_n = n - 42
         base5 = bears(new_n)
-        if base5 == True:
-            return True
-    return False
+    return base2 or base34 or base5
+
+    # if n == 42:                     
+    #     return True
+    # elif n < 42:
+    #     return False
+    # # Next three conditional statements reduce problem by the three rules
+    # if n % 2 == 0:
+    #     new_n = n/2
+    #     base2 = bears(new_n)
+    #     if base2 == True:
+    #         return True
+    # if (n % 3 == 0) or (n % 4 == 0):
+    #     ones = n % 10
+    #     tens = n // 10
+    #     new_n = n - (ones * tens)
+    #     # Check if either ones or tens place was 0
+    #     if new_n != n:              
+    #         base34 = bears(new_n)
+    #         if base34 == True:
+    #             return True
+    # if n % 5 == 0:
+    #     new_n = n - 42
+    #     base5 = bears(new_n)
+    #     if base5 == True:
+    #         return True
+    # return False
