@@ -23,7 +23,7 @@ def bears(n):
             return True
     if (n % 3 == 0) or (n % 4 == 0):
         ones = n % 10
-        tens = n // 10 #% 10
+        tens = n // 10 % 10
         new_n = n - (ones * tens)
         # Check if either ones or tens place was 0
         if new_n != n:              
