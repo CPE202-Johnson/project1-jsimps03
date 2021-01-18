@@ -26,7 +26,7 @@ def bears(n):
         ones = n % 10
         tens = n // 10
         new_n = n - (ones * tens)
-        # Check if either ones or tens place was 0
+        # Check if either ones or tens place (or both) was 0
         if new_n != n:              
             base34 = bears(new_n)
     if n % 5 == 0:
