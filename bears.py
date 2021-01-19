@@ -11,8 +11,6 @@ def bears(n):
     # new_n is the new value of n after its been reduced
     # ones and tens are the int values of the last and second to last digits of n
     # First two conditional statements check for base case:
-    if n == 50000:
-        return True
     if n == 42:                     
         return True
     elif n < 42:
@@ -25,7 +23,7 @@ def bears(n):
             return True
     if (n % 3 == 0) or (n % 4 == 0):
         ones = n % 10
-        tens = n // 10 % 10
+        tens = (n // 10) % 10
         new_n = n - (ones * tens)
         # Check if either ones or tens place was 0
         if new_n != n:              
